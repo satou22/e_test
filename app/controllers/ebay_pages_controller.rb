@@ -12,11 +12,11 @@ class EbayPagesController < ApplicationController
 
   def home
 #     @page = @@agent.get("http://www.ebay.com/sch/ebayadvsearch/?rt=nc")
-		@@agent.get("http://taruo.net/e/")
+		@@agent.get("http://re.pdata.jp/")
 		@page = @@render_agent.get(@@agent.page.uri)
 #     head = @@agent.page.at("head").add_child(_head)
 #     body = @@agent.page.at("body").add_child(_script)
-		render text: @page.search("//html").to_s
+		render text: @page.body.to_s
   end
 
 	private
